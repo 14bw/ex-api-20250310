@@ -1,0 +1,26 @@
+@url = https://legendary-potato-7v56jjv576xghpvgj-8080.app.github.dev
+
+### Listar todos os gêneros
+GET {{url}}/generos
+
+### Criar um novo gênero
+POST {{url}}/generos
+Content-Type: application/json
+
+{
+    "descricao": "Ficção Científica"
+}
+
+### Obter um gênero específico pelo ID
+GET {{url}}/generos/1
+
+### Atualizar um gênero existente
+PUT {{url}}/generos/1
+Content-Type: application/json
+
+{
+    "descricao": "Ficção Científica Espacial"
+}
+
+### Excluir um gênero
+DELETE {{url}}/generos/1
