@@ -1,4 +1,4 @@
-@url = https://fuzzy-space-succotash-4qjrr56xrxf7ppp-8080.app.github.dev
+@url = https://legendary-potato-7v56jjv576xghpvgj-8080.app.github.dev
 
 GET {{url}}/livros
 
@@ -11,3 +11,19 @@ Content-Type: application/json
     "generos" : "Aventura",
     "autores" : "Eu mesmo"
 }
+
+###
+GET {{url}}/livros/2
+
+###
+PUT {{url}}/livros/2
+Content-Type: application/json
+
+{
+    "titulo": "Teste",
+    "generos" : "Teste",
+    "autores" : "Teste"
+}
+
+###
+DELETE {{url}}/livros/2
