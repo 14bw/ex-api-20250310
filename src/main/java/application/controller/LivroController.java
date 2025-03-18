@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import application.record.LivroDTO;
+import application.record.LivroInsertDTO;
 import application.service.LivroService;
 
 @RestController
@@ -27,7 +28,7 @@ public class LivroController {
     }
 
     @PostMapping
-    public LivroDTO insert(@RequestBody LivroDTO livro) {
+    public LivroDTO insert(@RequestBody LivroInsertDTO livro) {
        return this.livroService.insert(livro);
     }
 

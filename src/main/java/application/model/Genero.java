@@ -22,7 +22,7 @@ public class Genero {
 
     private String descricao;
 
-     public Genero(GeneroDTO record) {
+    public Genero(GeneroDTO record) {
         this.id = record.id();
         this.descricao = record.descricao();
     }

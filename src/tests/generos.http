@@ -1,4 +1,4 @@
-@url = https://legendary-potato-7v56jjv576xghpvgj-8080.app.github.dev
+@url = https://supreme-space-meme-g496xxvw47xcwv7p-8080.app.github.dev
 
 ### Listar todos os gêneros
 GET {{url}}/generos
@@ -15,7 +15,7 @@ Content-Type: application/json
 GET {{url}}/generos/1
 
 ### Atualizar um gênero existente
-PUT {{url}}/generos/1
+PUT {{url}}/generos/154
 Content-Type: application/json
 
 {
@@ -24,3 +24,4 @@ Content-Type: application/json
 
 ### Excluir um gênero
 DELETE {{url}}/generos/1
+

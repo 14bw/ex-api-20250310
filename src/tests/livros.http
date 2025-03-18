@@ -1,4 +1,4 @@
-@url = https://legendary-potato-7v56jjv576xghpvgj-8080.app.github.dev
+@url = https://supreme-space-meme-g496xxvw47xcwv7p-8080.app.github.dev
 
 GET {{url}}/livros
 
@@ -8,7 +8,7 @@ Content-Type: application/json
 
 {
     "titulo": "Teste",
-    "generos" : "Aventura",
+    "id_genero": 1,
     "autores" : "Eu mesmo"
 }
 
