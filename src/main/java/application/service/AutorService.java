@@ -6,11 +6,14 @@ import org.springframework.stereotype.Service;
 import application.model.Autor;
 import application.record.AutorDTO;
 import application.repository.AutorRepository;
+import application.repository.GeneroRepository;
 
 @Service
 public class AutorService {
     @Autowired
     private AutorRepository autorRepository;
+
+    
 
     public AutorDTO insert(AutorDTO dados) {
         return new AutorDTO(autorRepository.save(new Autor(dados)));

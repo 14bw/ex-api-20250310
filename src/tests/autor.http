@@ -8,5 +8,5 @@ POST {{url}}/autores
 Content-Type: application/json
 
 {
-    "nome": "Novo Teste",
+    "nome": "Novo Teste"
 }

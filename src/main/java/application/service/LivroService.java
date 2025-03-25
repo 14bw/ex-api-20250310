@@ -9,8 +9,11 @@ import org.springframework.web.server.ResponseStatusException;
 
 import application.model.Autor;
 import application.model.Livro;
+import application.record.AutorDTO;
 import application.record.LivroDTO;
 import application.record.LivroInsertDTO;
+import application.repository.AutorRepository;
+import application.repository.GeneroRepository;
 import application.repository.LivroRepository;
 
 import java.util.stream.Collectors;
@@ -20,7 +23,12 @@ import java.util.HashSet;
 public class LivroService {
     @Autowired
     private LivroRepository livroRepo;
-    
+    @Autowired
+    private GeneroRepository generoRepository;
+
+    @Autowired
+    private AutorRepository autorRepository;
+   
     public Iterable<LivroDTO> getAll() {
         return livroRepo.findAll().stream().map(LivroDTO::new).toList();
     }
@@ -36,6 +44,23 @@ public class LivroService {
     }
 
     public LivroDTO insert(LivroInsertDTO livro) {
+
+        if (!generoRepository.existsById(livro.id_genero()) ) {
+            throw new ResponseStatusException(
+                HttpStatus.NOT_FOUND,
+                "Genero Não Encontrado!"
+            );
+        }
+
+        for(AutorDTO autor: livro.autores()) {
+            if (!autorRepository.existsById(autor.id())){
+                throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND,
+                    "Autor Não Encontrado!"
+                );  
+            };
+        }    
+          
         Livro newLivro = new Livro(livro);
         Livro savedLivro = livroRepo.save(newLivro);
         LivroDTO response = new LivroDTO(savedLivro);
